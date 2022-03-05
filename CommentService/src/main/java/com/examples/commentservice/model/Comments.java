@@ -1,64 +1,49 @@
-package com.examples.commentservice.model;
+package com.example.CustomerServices.model;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="comments")
-public class Comments {
+@Table(name = "posts")
+public class Customer {
+
 	@Id
 	int cid;
+	String cname;
+	String caddress;
 	
-	int pid;
-	
-	String commenter;
-	
-	String comment;
-	
-	public Comments() {
+
+	public Customer() {
+
+	}
+
+	public Customer(int cid, String cname, String caddress) {
+		super();
+		this.cid = cid;
+		this.cname = cname;
+		this.caddress = caddress;
 		
 	}
 
-	public int getCid() {
+	public int getcid() {
 		return cid;
 	}
 
-	public void setCid(int cid) {
+	public void setcid(int cid) {
 		this.cid = cid;
 	}
 
-	public int getPid() {
-		return pid;
+	public String getcname() {
+		return cname;
 	}
 
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setcname(String cname) {
+		this.cname = cname;
 	}
 
-	public String getCommenter() {
-		return commenter;
+	public String getcaddress() {
+		return caddress;
 	}
-
-	public void setCommenter(String commenter) {
-		this.commenter = commenter;
-	}
-
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public Comments(int cid, int pid, String commenter, String comment) {
-		super();
-		this.cid = cid;
-		this.pid = pid;
-		this.commenter = commenter;
-		this.comment = comment;
-	}
-	
-
 
 }
